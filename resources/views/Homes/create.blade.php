@@ -34,6 +34,9 @@
                         @enderror"
                             value="{{ old('name') }}" type="text" id="name" name="name"
                             placeholder="Enter name">
+                            @error('name')
+                                {{ $message }}
+                            @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="price">price</label>
@@ -43,7 +46,10 @@
                         @enderror"
                             value="{{ old('price') }}" type="text" id="price" name="price"
                             placeholder="Enter price number">
-                    </div>
+                    @error('price')
+                        {{ $message }}
+                    @enderror
+                        </div>
                     <div class="mb-3">
                         <label class="form-label" for="address">Address</label>
                         <input
@@ -52,6 +58,9 @@
                         @enderror"
                             type="text" value="{{ old('address') }}" id="address" name="address"
                             placeholder="Enter address">
+                            @error('address')
+                                {{ $message }}
+                            @enderror
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-success">Submit</button>
